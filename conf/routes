@@ -9,6 +9,7 @@
 
 # Home page
 GET     ${ctx}/                                       				Application.index
+GET    	${ctx}/artigos/{id}/{friendlyUrl}							Application.details
 
 # Home page
 POST    ${ctx}/savemessage											MessageCRUD.saveMessage
@@ -40,9 +41,6 @@ GET    	${ctx}/o-sistema/{friendlyUrl}								TheSystemPagesController.details
 GET    	${ctx}/spl/{friendlyUrl}									SimplePagesController.details
 
 # Public News
-
-GET    	${ctx}/dicas					   				 			NewsController.list
-GET    	${ctx}/dicas/{id}/{friendlyUrl}								NewsController.details
 
 # Admin Update Order
 GET		${ctx}/admin/atualizar-pedidos								OrderOfServiceCRUD.updateOrder

@@ -2512,6 +2512,7 @@
 		background-repeat: no-repeat;
 		background-size: 25em;
 		padding: 7em 0;
+		background-color: lightpink;
 	}
 
 		#main > :last-child {
