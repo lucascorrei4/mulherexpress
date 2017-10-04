@@ -31,7 +31,7 @@
 				<article id="main">
 					<header class="special container" style="margin-bottom: 0">
 						<span class="icon fa-question-circle-o"></span>
-						<h2 style="font-weight: bold; text-transform: uppercase;">&{article.getTitle().raw()}</h2>
+						<h2 style="font-weight: bold; text-transform: uppercase; color: #5C5C5C">&{article.getTitle().raw()}</h2>
 					</header>
 					
 					<section class="wrapper style4 container" style="padding: 15px">
@@ -44,8 +44,8 @@
 									<div class="content">
 										<section>
 											<header>
-												<p style="font-size: 15px; margin: 0; text-align: left">Você está em: <a href="/"><strong>Mulher Express</strong></a> > <a href="/"><strong>Artigos</strong></a> > <a href="#"><strong>&{article.getTitle().raw()}</strong></a></p>
-												<p style="font-size: 15px; margin: 0; text-align: left">Publicado por <a href="http://instagram.com/lucascorrei4" target="_blank">Lucas Correia</a> em &{article.postedAtParsed}</p>
+												<p style="font-size: 15px; margin: 0; text-align: left">Você está em: <a href="/"><strong>Mulher Express</strong></a> > <a href="/artigos"><strong>Artigos</strong></a> > <a href="#"><strong>&{article.getTitle().raw()}</strong></a></p>
+												<p style="font-size: 15px; margin: 0; text-align: left">Publicado em &{article.postedAtParsed}</p>
 												<input id="shorten" type="hidden" value="&{article.getShortenUrl()}" />
 												<h3 style="text-align: left; text-transform: unset; margin-top: 20px; color: #0f0f0f; font-weight: 600">&{article.getHeadline().raw()}</h3>
 											</header>

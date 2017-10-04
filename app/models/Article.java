@@ -43,6 +43,8 @@ public class Article extends Model {
 
 	public Blob image2;
 
+	public Blob image3;
+
 	public String titleCaptureForm;
 
 	public String tags;
@@ -146,6 +148,14 @@ public class Article extends Model {
 
 	public void setImage2(Blob image2) {
 		this.image2 = image2;
+	}
+
+	public Blob getImage3() {
+		return image3;
+	}
+	
+	public void setImage3(Blob image3) {
+		this.image3 = image3;
 	}
 
 	public String getTags() {

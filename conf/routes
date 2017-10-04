@@ -10,6 +10,7 @@
 # Home page
 GET     ${ctx}/                                       				Application.index
 GET    	${ctx}/artigos/{id}/{friendlyUrl}							Application.details
+GET    	${ctx}/artigos												Application.index
 
 # Home page
 POST    ${ctx}/savemessage											MessageCRUD.saveMessage
