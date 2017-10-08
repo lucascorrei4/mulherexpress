@@ -179,17 +179,6 @@ POST	${ctx}/admin/etapas-dos-servicos								StepCRUD.create
 POST	${ctx}/admin/etapas-dos-servicos/{id}							StepCRUD.save
 DELETE	${ctx}/admin/etapas-dos-servicos/{id}							StepCRUD.delete
 
-# Admin Order of Services
-
-GET		${ctx}/admin/ordens-de-servico								OrderOfServiceCRUD.list
-GET		${ctx}/admin/ordens-de-servico/novo							OrderOfServiceCRUD.blank
-GET		${ctx}/admin/ordens-de-servico/{id}							OrderOfServiceCRUD.show
-GET		${ctx}/admin/ordens-de-servico/{id}/{field}					OrderOfServiceCRUD.attachment
-GET		${ctx}/admin/ordens-de-servico/{id}/editar					OrderOfServiceCRUD.edit
-POST	${ctx}/admin/ordens-de-servico								OrderOfServiceCRUD.create
-POST	${ctx}/admin/ordens-de-servico/{id}							OrderOfServiceCRUD.save
-DELETE	${ctx}/admin/ordens-de-servico/{id}							OrderOfServiceCRUD.delete
-
 GET		${ctx}/admin/empresa/{id}							InstitutionCRUD.show
 GET		${ctx}/admin/empresa								InstitutionCRUD.list
 GET		${ctx}/admin/empresas-cadastradas					InstitutionCRUD.listAll

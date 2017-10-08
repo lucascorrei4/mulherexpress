@@ -146,5 +146,33 @@ public class ApplicationConfiguration {
 	public String getGoogleShortenerUrlApiKey() {
 		return getProperty("app.urlShortener.apiKey");
 	}
+
+	public String getSiteDomain() {
+		return getProperty("site.domain");
+	}
+	
+	public String getSiteMail() {
+		return getProperty("site.mail");
+	}
+
+	public String getSiteTitle() {
+		return getProperty("site.title");
+	}
+	
+	public String getSiteName() {
+		return getProperty("site.name");
+	}
+
+	public String getSiteFacebook() {
+		return getProperty("site.facebook");
+	}
+
+	public String getSiteTwitter() {
+		return getProperty("site.twitter");
+	}
+
+	public String getSiteTwitterShort() {
+		return getProperty("site.twitter.short");
+	}
 	
 }

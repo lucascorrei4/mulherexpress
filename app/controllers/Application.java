@@ -1,46 +1,13 @@
 package controllers;
 
 import java.io.File;
-import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.StringTokenizer;
-
-import javax.servlet.http.HttpServletResponse;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 
 import models.Article;
-import models.BodyMail;
-import models.Institution;
-import models.MailList;
-import models.Message;
-import models.MoipNotification;
-import models.OrderOfService;
-import models.OrderOfServiceStep;
-import models.OrderOfServiceValue;
 import models.Parameter;
-import models.SendTo;
-import models.Sender;
-import models.Service;
-import models.StatusMail;
-import models.StatusSMS;
 import models.TheSystem;
-import models.User;
-import play.data.validation.Error;
-import play.data.validation.Valid;
-import play.mvc.Before;
 import play.mvc.Controller;
 import play.vfs.VirtualFile;
-import util.FromEnum;
-import util.UserInstitutionParameter;
 import util.Utils;
 
 public class Application extends Controller {

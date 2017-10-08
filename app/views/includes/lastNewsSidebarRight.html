@@ -1,22 +1,22 @@
 <meta charset="utf-8" />
-<h2></h2>
-<!-- Tweet Embed Content  -->
-&{parameter.getTweet().raw()}
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-<br />
 #{list sidebarRightNews, as:'article'}
 <section style="margin: 0; padding-top: 10px;">
 	<header>
-		<h3 style="text-transform: uppercase;">
-			<strong>&{article.getTitle().raw()}</strong>
-		</h3>
+		<a href="/artigos/${article.id}/${article.getFriendlyUrl()}" style="color: inherit;">
+			<h3 style="text-transform: uppercase;">
+				<strong>&{article.getTitle().raw()}</strong>
+			</h3>
+		</a>
 	</header>
-	<a href="/artigos/${article.id}/${article.getFriendlyUrl()}" class="image featured"><img src="@{NewsController.getImage(article.id, '1')}" alt="" /></a>
-	<p style="margin: 0 0 1em 0;">&{article.getHeadline().length() > 130 ? article.getHeadline().substring(0, 128).concat("...") : article.getHeadline().raw()}</p>
-	<footer>
-		<ul class="buttons">
-			<li><a href="/artigos/${article.id}/${article.getFriendlyUrl()}" class="button small">Leia mais</a></li>
-		</ul>
-	</footer>
+	<a href="/artigos/${article.id}/${article.getFriendlyUrl()}" class="image featured"><img src="@{NewsController.getImage(article.id, '1')}" alt="&{article.getTitle().raw()}" title="&{article.getTitle().raw()}" /></a>
+	<a href="/artigos/${article.id}/${article.getFriendlyUrl()}">
+		<p style="margin: 0 0 1em 0;">&{article.getHeadline().length() > 130 ? article.getHeadline().substring(0, 128).concat("...") : article.getHeadline().raw()}</p>
+	</a>
 </section>
 #{/list}
+<!-- Tweet Embed Content  -->
+<section style="padding-top: 10px;">
+	&{parameter.getTweet().raw()}
+	<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+</section>
+

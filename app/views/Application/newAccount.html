@@ -8,14 +8,14 @@
 		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 		})(window,document,'script','dataLayer','GTM-WWMNHWH');</script>
 		<!-- End Google Tag Manager -->
-		<title>Nova Conta | Seu Pedido Online</title>
-		<meta name="description" content="Faça seu cadastro de usuário | Seu Pedido Online">
-		<meta name="keywords" content="novo cadastro, nova conta, cadastro de usuário, seu pedido online">
-		<meta property="twitter:title" content="Nova Conta | Seu Pedido Online">
-		<meta property="twitter:description" content="Faça seu cadastro de usuário | Seu Pedido Online">
-		<meta property="og:title" content="Nova Conta | Seu Pedido Online">
-		<meta property="og:description" content="Faça seu cadastro de usuário | Seu Pedido Online">
-		<meta property="og:image" content="http://seupedido.online/public/images/logo-admin.png">
+		<title>Nova Conta | ${play.configuration['site.name']}</title>
+		<meta name="description" content="Faça seu cadastro de usuário | ${play.configuration['site.name']}">
+		<meta name="keywords" content="novo cadastro, nova conta, cadastro de usuário, ${play.configuration['site.name']}">
+		<meta property="twitter:title" content="Nova Conta | ${play.configuration['site.name']}">
+		<meta property="twitter:description" content="Faça seu cadastro de usuário | ${play.configuration['site.name']}">
+		<meta property="og:title" content="Nova Conta | ${play.configuration['site.name']}">
+		<meta property="og:description" content="Faça seu cadastro de usuário | ${play.configuration['site.name']}">
+		<meta property="og:image" content="ApplicationConfiguration.getInstance().getSiteDomain()/public/images/logo-admin.png">
 		<meta charset="utf-8" />
 		#{include 'includes/headerTemplateFollow.html' /}
 	</head>

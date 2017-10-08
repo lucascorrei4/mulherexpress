@@ -8,14 +8,14 @@
 		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 		})(window,document,'script','dataLayer','GTM-WWMNHWH');</script>
 		<!-- End Google Tag Manager -->
-		<title>&{title} | Seu Pedido Online</title>
+		<title>&{title} | ${play.configuration['site.name']}</title>
 		<meta name="description" content="&{headline}}">
 		<meta name="keywords" content="&{simplePage.getMetatags()}">
-		<meta property="twitter:title" content="&{title} | Seu Pedido Online">
+		<meta property="twitter:title" content="&{title} | ${play.configuration['site.name']}">
 		<meta property="twitter:description" content="&{headline}">
-		<meta property="og:title" content="&{title} | Seu Pedido Online">
+		<meta property="og:title" content="&{title} | ${play.configuration['site.name']}">
 		<meta property="og:description" content="&{headline}}">
-		<meta property="og:image" content="https://seupedido.online/simplepagescontroller/getimage?id=&{simplePage.id}&index=1">
+		<meta property="og:image" content="${play.configuration.getProperty('site.domain')}/simplepagescontroller/getimage?id=&{simplePage.id}&index=1">
 		<meta charset="utf-8" />
 		#{include 'includes/headerTemplateFollow.html' /}
 	</head>

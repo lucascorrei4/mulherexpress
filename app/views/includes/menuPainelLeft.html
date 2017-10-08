@@ -8,27 +8,6 @@
 			</li>
 
 			<li style="display: ${enableUser == 'false' ? 'none' : 'block'};">
-				<a href="@{ServiceCRUD.list}"><i class="fa fa-wrench fa-fw"></i> 2º. Serviços</a>
-			</li>
-
-			<li style="display: ${enableUser == 'false' ? 'none' : 'block'};">
-				<a href="@{OrderOfServiceCRUD.list}"><i class="fa fa-qrcode fa-fw"></i> 3º. Gerar Código (OS)</a>
-			</li>
-
-			<li style="display: ${enableUser == 'false' ? 'none' : 'block'};">
-				<a href="@{OrderOfServiceCRUD.updateOrder}"><i class="fa fa-battery-half fa-fw"></i> 4º. Atualizar Pedidos</a>
-			</li>
-
-			<li style="display: ${enableUser == 'false' ? 'none' : 'block'};">
-				<a href="#"><i class="fa fa-plane fa-fw"></i> Notificações Enviadas<span class="fa arrow"></span></a>
-				<ul class="nav nav-second-level">
-					<li><a href="@{StatusPushCRUD.list}"><i class="fa fa-paper-plane fa-fw"></i> Push Enviadas</a></li>
-					<li style="display: none;"><a href="@{StatusSmsCRUD.list}"><i class="fa fa-paper-plane-o fa-fw"></i> SMSs Enviadas</a></li>
-					<li><a href="@{StatusMailCRUD.list}"><i class="fa fa-mail-forward fa-fw"></i> E-mails Enviados</a></li>
-				</ul>
-			</li>
-			
-			<li style="display: ${enableUser == 'false' ? 'none' : 'block'};">
 				<a href="#"><i class="fa fa-gears fa-fw"></i> Configurações<span class="fa arrow"></span></a>
 				<ul class="nav nav-second-level">
 					<li><a href="/admin/empresa/${id}">Dados da Empresa</a></li>

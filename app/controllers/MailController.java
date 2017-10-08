@@ -163,7 +163,7 @@ public class MailController {
 				"                                                                                       </tr>                                                                                                                                                                                                                                              ");
 		sb.append(
 				"                                                                                       <tr align=\"center\">                                                                                                                                                                                                                                ");
-		sb.append("                                                                                          <td style=\"text-align: center\"><img alt=\"SeuPedido.Online - Acompanhamento de Pedidos e Servi&ccedil;os\" class=\"m_3594026484717175708CToWUd CToWUd\" src=\"" + bodyMail.getImage1()
+		sb.append("                                                                                          <td style=\"text-align: center\"><img alt=\"" + ApplicationConfiguration.getInstance().getSiteTitle() + "\" class=\"m_3594026484717175708CToWUd CToWUd\" src=\"" + bodyMail.getImage1()
 				+ "\"                                                                                                                                                    ");
 		sb.append(
 				"                                                                                             style=\"border-radius: 5%; border: 1px solid rgb(227, 227, 227); width: 80px; min-height: 80px\"></td>                                                                                                                                         ");
@@ -172,7 +172,7 @@ public class MailController {
 		sb.append(
 				"                                                                                       <tr>                                                                                                                                                                                                                                               ");
 		sb.append(
-				"                                                                                          <td align=\"center\" height=\"20\" style=\"height: 20px; font-size: 11px; font-style: italic;\">SeuPedido.Online</td>                                                                                                                                 ");
+				"                                                                                          <td align=\"center\" height=\"20\" style=\"height: 20px; font-size: 11px; font-style: italic;\">" + ApplicationConfiguration.getInstance().getSiteDomain() + "</td>                                                                                                                                 ");
 		sb.append(
 				"                                                                                       </tr>                                                                                                                                                                                                                                              ");
 		sb.append(
@@ -294,11 +294,11 @@ public class MailController {
 		sb.append(
 				"                                                                                             <div>                                                                                                                                                                                                                                        ");
 		sb.append(
-				"                                                                                                <a href=\"https://www.seupedido.online\"                                                                                                                                                                                                     ");
+				"                                                                                                <a href=\"" + ApplicationConfiguration.getInstance().getSiteDomain() + "\"                                                                                                                                                                                                     ");
 		sb.append(
 				"                                                                                                   style=\"background-color: #808000; border-radius: 5px; color: #ffffff; display: inline-block; font-family: sans-serif; font-size: 16px; font-weight: bold; line-height: 50px; text-align: center; text-decoration: none; width: 310px\"  ");
 		sb.append(
-				"                                                                                                   target=\"_blank\" data-saferedirecturl=\"https://www.seupedido.online\">www.seupedido.online</a>                                                                                                                                            ");
+				"                                                                                                   target=\"_blank\" data-saferedirecturl=\"" + ApplicationConfiguration.getInstance().getSiteDomain() + "\">" + ApplicationConfiguration.getInstance().getSiteDomain() + "</a>                                                                                                                                            ");
 		sb.append(
 				"                                                                                             </div>                                                                                                                                                                                                                                       ");
 		sb.append(
@@ -568,7 +568,7 @@ public class MailController {
 				"                                                                                       </tr>                                                                                                                                                                                                                                              ");
 		sb.append(
 				"                                                                                       <tr align=\"center\">                                                                                                                                                                                                                                ");
-		sb.append("                                                                                          <td style=\"text-align: center\"><img alt=\"SeuPedido.Online - Acompanhamento de Pedidos e Servi&ccedil;os\" class=\"m_3594026484717175708CToWUd CToWUd\" src=\"" + bodyMail.getImage1()
+		sb.append("                                                                                          <td style=\"text-align: center\"><img alt=\"" + ApplicationConfiguration.getInstance().getSiteTitle() + "\" class=\"m_3594026484717175708CToWUd CToWUd\" src=\"" + bodyMail.getImage1()
 				+ "\"                                                                                                                                                    ");
 		sb.append(
 				"                                                                                             style=\"border-radius: 5%; border: 1px solid rgb(227, 227, 227); width: 80px; min-height: 80px\"></td>                                                                                                                                         ");
@@ -577,7 +577,7 @@ public class MailController {
 		sb.append(
 				"                                                                                       <tr>                                                                                                                                                                                                                                               ");
 		sb.append(
-				"                                                                                          <td align=\"center\" height=\"20\" style=\"height: 20px; font-size: 11px; font-style: italic;\">SeuPedido.Online</td>                                                                                                                                 ");
+				"                                                                                          <td align=\"center\" height=\"20\" style=\"height: 20px; font-size: 11px; font-style: italic;\">" + ApplicationConfiguration.getInstance().getSiteDomain() + "</td>                                                                                                                                 ");
 		sb.append(
 				"                                                                                       </tr>                                                                                                                                                                                                                                              ");
 		sb.append(
@@ -635,11 +635,11 @@ public class MailController {
 		sb.append(
 				"                                                                                             <div>                                                                                                                                                                                                                                        ");
 		sb.append(
-				"                                                                                                <a href=\"https://www.seupedido.online\"                                                                                                                                                                                                     ");
+				"                                                                                                <a href=\"" + ApplicationConfiguration.getInstance().getSiteDomain() + "\"                                                                                                                                                                                                     ");
 		sb.append(
 				"                                                                                                   style=\"background-color: #808000; border-radius: 5px; color: #ffffff; display: inline-block; font-family: sans-serif; font-size: 16px; font-weight: bold; line-height: 50px; text-align: center; text-decoration: none; width: 310px\"  ");
 		sb.append(
-				"                                                                                                   target=\"_blank\" data-saferedirecturl=\"https://www.seupedido.online\">www.seupedido.online</a>                                                                                                                                            ");
+				"                                                                                                   target=\"_blank\" data-saferedirecturl=\"" + ApplicationConfiguration.getInstance().getSiteDomain() + "\">" + ApplicationConfiguration.getInstance().getSiteDomain() + "</a>                                                                                                                                            ");
 		sb.append(
 				"                                                                                             </div>                                                                                                                                                                                                                                       ");
 		sb.append(
@@ -909,7 +909,7 @@ public class MailController {
 				"                                                                                       </tr>                                                                                                                                                                                                                                              ");
 		sb.append(
 				"                                                                                       <tr align=\"center\">                                                                                                                                                                                                                                ");
-		sb.append("                                                                                          <td style=\"text-align: center\"><img alt=\"SeuPedido.Online - Acompanhamento de Pedidos e Servi&ccedil;os\" class=\"m_3594026484717175708CToWUd CToWUd\" src=\"" + bodyMail.getImage1()
+		sb.append("                                                                                          <td style=\"text-align: center\"><img alt=\"" + ApplicationConfiguration.getInstance().getSiteTitle() + "\" class=\"m_3594026484717175708CToWUd CToWUd\" src=\"" + bodyMail.getImage1()
 				+ "\"                                                                                                                                                    ");
 		sb.append(
 				"                                                                                             style=\"border-radius: 5%; border: 1px solid rgb(227, 227, 227); width: 80px; min-height: 80px\"></td>                                                                                                                                         ");
@@ -918,7 +918,7 @@ public class MailController {
 		sb.append(
 				"                                                                                       <tr>                                                                                                                                                                                                                                               ");
 		sb.append(
-				"                                                                                          <td align=\"center\" height=\"20\" style=\"height: 20px; font-size: 11px; font-style: italic;\">SeuPedido.Online</td>                                                                                                                                 ");
+				"                                                                                          <td align=\"center\" height=\"20\" style=\"height: 20px; font-size: 11px; font-style: italic;\">" + ApplicationConfiguration.getInstance().getSiteDomain() + "</td>                                                                                                                                 ");
 		sb.append(
 				"                                                                                       </tr>                                                                                                                                                                                                                                              ");
 		sb.append(
@@ -980,11 +980,11 @@ public class MailController {
 		sb.append(
 				"                                                                                             <div>                                                                                                                                                                                                                                        ");
 		sb.append(
-				"                                                                                                <a href=\"https://www.seupedido.online\"                                                                                                                                                                                                     ");
+				"                                                                                                <a href=\"" + ApplicationConfiguration.getInstance().getSiteDomain() + "\"                                                                                                                                                                                                     ");
 		sb.append(
 				"                                                                                                   style=\"background-color: #808000; border-radius: 5px; color: #ffffff; display: inline-block; font-family: sans-serif; font-size: 16px; font-weight: bold; line-height: 50px; text-align: center; text-decoration: none; width: 310px\"  ");
 		sb.append(
-				"                                                                                                   target=\"_blank\" data-saferedirecturl=\"https://www.seupedido.online\">www.seupedido.online</a>                                                                                                                                            ");
+				"                                                                                                   target=\"_blank\" data-saferedirecturl=\"" + ApplicationConfiguration.getInstance().getSiteDomain() + "\">" + ApplicationConfiguration.getInstance().getSiteDomain() + "</a>                                                                                                                                            ");
 		sb.append(
 				"                                                                                             </div>                                                                                                                                                                                                                                       ");
 		sb.append(
@@ -1189,8 +1189,8 @@ public class MailController {
 		sendTo.setStatus(new StatusMail());
 		/* Sender object */
 		Sender sender = new Sender();
-		sender.setCompany("Seu Pedido Online");
-		sender.setFrom("contato@seupedido.online");
+		sender.setCompany(ApplicationConfiguration.getInstance().getSiteName());
+		sender.setFrom(ApplicationConfiguration.getInstance().getSiteMail());
 		sender.setKey("");
 		/* SendTo object */
 		BodyMail bodyMail = new BodyMail();

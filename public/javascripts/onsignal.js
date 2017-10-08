@@ -32,9 +32,9 @@
 				cancelButtonText: "EU NÃO QUERO!"
 			},
 			welcomeNotification: {
-				"title": "Seu Pedido Online",
+				"title": ApplicationConfiguration.getInstance().getSiteName(),
 				"message": "Obrigado pela inscrição",
-				 "url": "http://seupedido.online"
+				 "url": ApplicationConfiguration.getInstance().getSiteDomain() + ""
 			}
 	    }]);
     </script>

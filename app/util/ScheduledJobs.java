@@ -63,8 +63,8 @@ public class ScheduledJobs extends Job {
 			sendTo.setStatus(new StatusMail());
 			/* Sender object */
 			Sender sender = new Sender();
-			sender.setCompany("Seu Pedido Online");
-			sender.setFrom("contato@seupedido.online");
+			sender.setCompany(ApplicationConfiguration.getInstance().getSiteName());
+			sender.setFrom(ApplicationConfiguration.getInstance().getSiteMail());
 			sender.setKey("Sales Funnel");
 			/* SendTo object */
 			BodyMail bodyMail = new BodyMail();

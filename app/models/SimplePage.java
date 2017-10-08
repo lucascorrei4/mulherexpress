@@ -1,22 +1,16 @@
 package models;
 
-import java.net.URI;
-import java.net.URL;
 import java.text.ParseException;
 
 import javax.persistence.Entity;
 import javax.persistence.Lob;
-import javax.persistence.PostLoad;
-import javax.persistence.PrePersist;
 
-import org.apache.commons.codec.binary.StringUtils;
-
-import controllers.Admin;
 import controllers.CRUD.Hidden;
 import play.data.validation.MaxSize;
 import play.data.validation.Required;
 import play.db.jpa.Blob;
 import play.db.jpa.Model;
+import util.ApplicationConfiguration;
 import util.Utils;
 
 @Entity
@@ -161,7 +155,7 @@ public class SimplePage extends Model {
 	public String getShortenUrl() {
 		if (Utils.isNullOrEmpty(this.shortenUrl) && !Utils.isNullOrZero(this.id)
 				&& !Utils.isNullOrEmpty(this.friendlyUrl)) {
-			setShortenUrl(Utils.getShortenUrl("https://seupedido.online/continue/".concat(this.getFriendlyUrl())));
+			setShortenUrl(Utils.getShortenUrl(ApplicationConfiguration.getInstance().getSiteDomain() + "/continue/".concat(this.getFriendlyUrl())));
 		}
 		return shortenUrl;
 	}

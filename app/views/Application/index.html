@@ -8,14 +8,14 @@
 		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 		})(window,document,'script','dataLayer','GTM-WWMNHWH');</script>
 		<!-- End Google Tag Manager -->
-		<title>Moda, Saúde, Beleza | Tudo sobre o universo feminino | Mulher Express</title>
-		<meta name="description" content="Fique por dentro das novidades de Tecnologia e Inovação | Seu Pedido Online">
-		<meta name="keywords" content="dicas de tecnologia, inovação, tecnologia, seu pedido online, computador, dicas de internet">
-		<meta property="twitter:title" content="Dicas Úteis | Seu Pedido Online">
-		<meta property="twitter:description" content="Fique por dentro das novidades de Tecnologia e Inovação | Seu Pedido Online">
-		<meta property="og:title" content="Dicas Úteis | Seu Pedido Online">
-		<meta property="og:description" content="Fique por dentro das novidades de Tecnologia e Inovação | Seu Pedido Online">
-		<meta property="og:image" content="http://seupedido.online/public/images/logo-admin.png">
+		<title>${play.configuration['site.title']}</title>
+		<meta name="description" content="${play.configuration['site.description']} | ${play.configuration['site.title']}">
+		<meta name="keywords" content="${play.configuration['site.keywords']} ">
+		<meta property="twitter:title" content="${play.configuration['site.title']}">
+		<meta property="twitter:description" content="${play.configuration['site.description']} | ${play.configuration['site.title']}">
+		<meta property="og:title" content="${play.configuration['site.title']}">
+		<meta property="og:description" content="${play.configuration['site.description']} | ${play.configuration['site.title']}">
+		<meta property="og:image" content="${play.configuration['site.domain']}${play.configuration['site.logo']}">
 		<meta charset="utf-8" />
 		#{include 'includes/headerTemplateFollow.html' /}
 	</head>
@@ -25,49 +25,48 @@
 		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<!-- End Google Tag Manager (noscript) -->
 		<div id="page-wrapper">
-			<!-- Header -->
-				#{include 'includes/menuTemplateFollow.html' /}
-			<!-- Main -->
-				<article id="main">
-					<header class="special container" style="margin-bottom: 0">
-						<span class="icon fa-heartbeat"></span>
-						<div style="background-image: url('/public/images/mulher_express.jpg'); width:150px; height:150px; border-radius:50%; overflow:hidden; background-size: cover; margin: 0 auto;"></div>
-						<h2>Mulher <strong>Express</strong></h2>
-						<blockquote style="border: none; padding-left: 45px;padding-top: 5px;padding-bottom:10px;font-style:italic;">
-									"A mulher forte ama, acolhe, perdoa, deixa ir, deixa voltar, insiste, <br />persiste mais um tanto, nunca desiste, vive de 
-						tentar com a vida..." H. Angel
-						</blockquote>
-					</header>
-					
-					<!-- One -->
-						<section class="wrapper style4 container" style="padding-top: 15px">
-							<div id="newsletterTips" style="width: 100%">
-								#{include 'includes/formNewsletterTips.html' /}
+			#{include 'includes/menuTemplateFollow.html' /}
+			<article id="main">
+				#{include 'includes/imgAdsTop.html' /}
+				<header class="special container" style="margin-bottom: 0">
+					<span class="icon fa-heartbeat"></span>
+					<div class="logo" style="position: relative; background-image: url('${play.configuration['site.logo']}'); width:150px; height:150px; border-radius:50%; overflow:hidden; background-size: cover; margin: 0 auto;"></div>
+					<h2>Mulher <strong>Express</strong></h2>
+					<blockquote style="border: none; padding: 0;font-style:italic;">
+								"A mulher forte ama, acolhe, perdoa, deixa ir, deixa voltar, insiste, <br />persiste mais um tanto, nunca desiste, vive de 
+					tentar com a vida..." H. Angel
+					</blockquote>
+				</header>
+				<section class="wrapper style4 container">
+					<div id="newsletterTips" style="width: 100%">
+						#{include 'includes/formNewsletterTips.html' /}
+					</div>
+					<div class="row 150%">
+						<div class="8u 12u(narrower)">
+							<div class="content">
+								#{include 'includes/highlightArticles.html' /}
 							</div>
-							<div class="row 150%">
-								<div class="8u 12u(narrower)">
-									<!-- Content -->
-										<div class="content">
-											#{include 'includes/highlightArticles.html' /}
-										</div>
-								</div>
-								<div class="4u 12u(narrower)">
-									<!-- Sidebar -->
-										<div class="sidebar">
-											#{include 'includes/lastNewsSidebarRight.html' /}
-										</div>
-								</div>
+						</div>
+						<div class="4u 12u(narrower)">
+							<div class="sidebar">
+								#{include 'includes/imgAdsSidebar.html' /}
 							</div>
-						</section>
-
-					<!-- Two -->
-						<section class="wrapper style1 container special">
-							<div class="row">
-								#{include 'includes/lastNewsBottom.html' /}
+							<div class="sidebar">
+								#{include 'includes/lastNewsSidebarRight.html' /}
 							</div>
-						</section>
-				</article>
-			<!-- Footer -->
+						</div>
+					</div>
+				</section>
+				<section class="wrapper style1 container special">
+					<div class="row">
+						#{include 'includes/imgAdsBottom.html' /}
+					</div>
+					<div class="row">
+						#{include 'includes/lastNewsBottom.html' /}
+					</div>
+				</section>
+			</article>
 			#{include 'includes/footerTemplateFollow.html' /}
+		</div>
 	</body>
 </html>
