@@ -3,6 +3,8 @@ package models;
 import java.text.ParseException;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Lob;
 
 import controllers.Admin;
@@ -12,6 +14,8 @@ import play.data.validation.Required;
 import play.db.jpa.Blob;
 import play.db.jpa.Model;
 import util.ApplicationConfiguration;
+import util.StatusInvoiceEnum;
+import util.TypeAdsNewsEnum;
 import util.Utils;
 
 @Entity
@@ -45,6 +49,11 @@ public class Article extends Model {
 	public String tags;
 
 	public String embed;
+	
+	@Enumerated(EnumType.STRING)
+	public TypeAdsNewsEnum typeAds = TypeAdsNewsEnum.Default;
+
+	public String directLink;
 
 	@Hidden
 	public String friendlyUrl;
@@ -218,6 +227,22 @@ public class Article extends Model {
 	
 	public void setTitleCaptureForm(String titleCaptureForm) {
 		this.titleCaptureForm = titleCaptureForm;
+	}
+	
+	public TypeAdsNewsEnum getTypeAds() {
+		return typeAds;
+	}
+
+	public void setTypeAds(TypeAdsNewsEnum typeAds) {
+		this.typeAds = typeAds;
+	}
+
+	public String getDirectLink() {
+		return directLink;
+	}
+
+	public void setDirectLink(String directLink) {
+		this.directLink = directLink;
 	}
 
 }

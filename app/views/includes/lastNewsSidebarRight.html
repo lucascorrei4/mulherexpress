@@ -9,9 +9,6 @@
 		</a>
 	</header>
 	<a href="/artigos/${article.id}/${article.getFriendlyUrl()}" class="image featured"><img src="@{NewsController.getImage(article.id, '1')}" alt="&{article.getTitle().raw()}" title="&{article.getTitle().raw()}" /></a>
-	<a href="/artigos/${article.id}/${article.getFriendlyUrl()}">
-		<p style="margin: 0 0 1em 0;">&{article.getHeadline().length() > 130 ? article.getHeadline().substring(0, 128).concat("...") : article.getHeadline().raw()}</p>
-	</a>
 </section>
 #{/list}
 <!-- Tweet Embed Content  -->

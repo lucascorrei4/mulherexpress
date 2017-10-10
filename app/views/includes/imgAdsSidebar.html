@@ -1,6 +1,13 @@
 <meta charset="utf-8" />
-<div class="6u 12u(narrower) divImageAdsSidebar">
-	<a href="#" class="imageAdsSidebar">
-		<img src="http://www.omilagredagravidez.com/banners/2-o-milagre-da-gravidez-336x280.jpg" alt="" />
-	</a>
-</div>
+#{if articleSidebarRightAds}
+	<section style="margin: 0; padding-top: 10px;">
+		<header>
+			<a href="/artigos/${articleSidebarRightAds.id}/${articleSidebarRightAds.getFriendlyUrl()}" style="color: inherit;">
+				<h3 style="text-transform: uppercase;">
+					<strong>&{articleSidebarRightAds.getTitle().raw()}</strong>
+				</h3>
+			</a>
+		</header>
+		<a href="/artigos/${articleSidebarRightAds.id}/${articleSidebarRightAds.getFriendlyUrl()}" class="image featured"><img src="@{NewsController.getImage(articleSidebarRightAds.id, '1')}" alt="&{articleSidebarRightAds.getTitle().raw()}" title="&{articleSidebarRightAds.getTitle().raw()}" /></a>
+	</section>
+#{/if}

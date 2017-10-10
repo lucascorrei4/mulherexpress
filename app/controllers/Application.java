@@ -1,6 +1,7 @@
 package controllers;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 import models.Article;
@@ -8,37 +9,100 @@ import models.Parameter;
 import models.TheSystem;
 import play.mvc.Controller;
 import play.vfs.VirtualFile;
+import util.TypeAdsNewsEnum;
 import util.Utils;
 
 public class Application extends Controller {
 
 	public static void index() {
 		List<Article> highlightArticles = Article.find("highlight = true and isActive = true").fetch(2);
-		List<Article> listArticles = Article.find("highlight = false and isActive = true order by postedAt desc").fetch(10);
-		List<Article> sidebarRightNews = listArticles.subList(0, 2);
-		List<Article> bottomNews = listArticles.subList(2, listArticles.size());
+		List<Article> listArticles = Article.find("highlight = false and isActive = true order by postedAt desc").fetch();
+		List<Article> sidebarRightNews = getArticlesSidebarRightNews(listArticles);
+		List<Article> bottomNews = getArticlesBottomNews(listArticles, sidebarRightNews);
+		/* Article Ads */
+		Article articleTopAds = getArticleAdsTop(listArticles);
+		Article articleSidebarRightAds = getArticleAdsSidebarRight(listArticles);
+		List<Article> articleBottomAds = getArticlesAdsBottom(listArticles);
 		Parameter parameter = Parameter.all().first();
 		List<TheSystem> listTheSystems = TheSystem.find("highlight = false and isActive = true order by postedAt desc")
 				.fetch(6);
 		TheSystem theSystem = new TheSystem();
 		theSystem.setShowTopMenu(true);
-		render(bottomNews, sidebarRightNews, highlightArticles, parameter, listTheSystems, theSystem);
+		render(bottomNews, sidebarRightNews, highlightArticles, parameter, listTheSystems, theSystem, articleTopAds, articleSidebarRightAds, articleBottomAds);
 	}
-
+	
 	public static void details(String id) {
 		Article article = Article.findById(Long.valueOf(id));
-		List<Article> listArticles = Article.find("highlight = false and isActive = true and id <>  " + Long.valueOf(id) + " order by postedAt desc").fetch(6);
-		List<Article> sidebarRightNews = listArticles.subList(0, 2);
-		List<Article> bottomNews = listArticles.subList(2, listArticles.size());
+		List<Article> listArticles = Article.find("highlight = false and isActive = true and id <>  " + Long.valueOf(id) + " order by postedAt desc").fetch();
+		List<Article> sidebarRightNews = getArticlesSidebarRightNews(listArticles);
+		List<Article> bottomNews = getArticlesBottomNews(listArticles, sidebarRightNews);
+		/* Article Ads */
+		Article articleTopAds = getArticleAdsTop(listArticles);
+		Article articleSidebarRightAds = getArticleAdsSidebarRight(listArticles);
+		List<Article> articleBottomAds = getArticlesAdsBottom(listArticles);
 		Parameter parameter = Parameter.all().first();
 		List<TheSystem> listTheSystems = TheSystem.find("highlight = false and isActive = true order by postedAt desc")
 				.fetch(6);
 		TheSystem theSystem = new TheSystem();
 		theSystem.setShowTopMenu(true);
 		String title = Utils.removeHTML(article.getTitle());
-		render(article, bottomNews, sidebarRightNews, parameter, listTheSystems, theSystem, title);
+		render(article, bottomNews, sidebarRightNews, parameter, listTheSystems, theSystem, title, articleTopAds, articleSidebarRightAds, articleBottomAds);
 	}
-	
+
+	private static List<Article> getArticlesSidebarRightNews(List<Article> listArticles) {
+		List<Article> listArticle = new ArrayList<Article>();
+		for (Article article : listArticles) {
+			if (article.getTypeAds() != null && TypeAdsNewsEnum.isDefaultArticle(article.getTypeAds().getValue())) {
+				listArticle.add(article);
+			}
+			if (listArticle.size() == 2) {
+				return listArticle;
+			}
+		}
+		return listArticle;
+	}
+
+	private static List<Article> getArticlesBottomNews(List<Article> listArticles, List<Article> listArticlesSidebarRight) {
+		List<Article> listArticle = new ArrayList<Article>();
+		for (Article article : listArticles) {
+			if (article.getTypeAds() != null && TypeAdsNewsEnum.isDefaultArticle(article.getTypeAds().getValue()) && !listArticlesSidebarRight.contains(article)) {
+				listArticle.add(article);
+			}
+			if (listArticle.size() == 6) {
+				return listArticle;
+			}
+		}
+		return listArticle;
+	}
+
+	private static List<Article> getArticlesAdsBottom(List<Article> listArticles) {
+		List<Article> listArticle = new ArrayList<Article>();
+		for (Article article : listArticles) {
+			if (article.getTypeAds() != null && TypeAdsNewsEnum.isAdsBottom(article.getTypeAds().getValue())) {
+				listArticle.add(article);
+			}
+		}
+		return listArticle;
+	}
+
+	private static Article getArticleAdsTop(List<Article> listArticles) {
+		for (Article article : listArticles) {
+			if (article.getTypeAds() != null && TypeAdsNewsEnum.isAdsTop(article.getTypeAds().getValue())) {
+				return article;
+			}
+		}
+		return null;
+	}
+
+	private static Article getArticleAdsSidebarRight(List<Article> listArticles) {
+		for (Article article : listArticles) {
+			if (article.getTypeAds() != null && TypeAdsNewsEnum.isAdsSidebarRight(article.getTypeAds().getValue())) {
+				return article;
+			}
+		}
+		return null;
+	}
+
 	public static void getImage(long id, String index) {
 		final Article article = Article.findById(id);
 		notFoundIfNull(article);

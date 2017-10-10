@@ -1643,7 +1643,7 @@
 		color: inherit;
 		font-weight: 300;
 		line-height: 1.75em;
-		margin-bottom: 1em;
+		margin-bottom: 0.1em;
 		text-transform: uppercase;
 	}
 
@@ -3292,6 +3292,14 @@ input::-moz-focus-inner {
 	float: left;
 }
 
+.imageAdsSidebar img {
+	max-width: 336px !important;
+}
+
+.divImageAdsBottom a img {
+	max-width: 274px;
+}
+
 @media screen and (max-width: 900px) {
 	.imageAdsTop {
 		padding: 0 5% 0 5%;
@@ -3322,6 +3330,7 @@ input::-moz-focus-inner {
 
 	.imageAdsSidebar img {
 		width: 100%;
+		max-width: 336px !important;
 	}
 	
 	.divImageAdsBottom {
@@ -3331,5 +3340,6 @@ input::-moz-focus-inner {
 	.divImageAdsSidebar {
 		padding: 0
 	}
+
 }
 
