@@ -60,7 +60,7 @@ jQuery(document).on('ready', function($){
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-91777562-1', 'auto');
+  ga('create', '&{parameter.getGoogleAnalyticsId()}', 'auto');
   ga('send', 'pageview');
 </script>
 <!-- Código do Google para tag de remarketing -->
@@ -69,7 +69,7 @@ As tags de remarketing não podem ser associadas a informações pessoais de ide
 --------------------------------------------------->
 <script type="text/javascript">
 	/* <![CDATA[ */
-	var google_conversion_id = 968744756;
+	var google_conversion_id = &{parameter.getGoogleRemarketingId()};
 	var google_custom_params = window.google_tag_params;
 	var google_remarketing_only = true;
 	/* ]]> */
@@ -77,6 +77,6 @@ As tags de remarketing não podem ser associadas a informações pessoais de ide
 <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
 <noscript>
 	<div style="display:inline;">
-		<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/968744756/?guid=ON&amp;script=0"/>
+		<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/&{parameter.getGoogleRemarketingId()}/?guid=ON&amp;script=0"/>
 	</div>
 </noscript>

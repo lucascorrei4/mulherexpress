@@ -3,7 +3,14 @@
 	<section>
 		<header>
 			<a href="/artigos/${highlightArticle.id}/${highlightArticle.getFriendlyUrl()}">
+			#{if highlightArticle_index == 1}
+				<h1 class="mainLead">
+					&{highlightArticle.getTitle().raw()}
+				</h1>
+			#{/if}
+			#{else}
 				<h2 style="text-transform: uppercase; margin-top: 20px; color: #5C5C5C"><strong>&{highlightArticle.getTitle().raw()}</strong></h2>
+			#{/else}
 			</a>			
 			<input id="shorten" type="hidden" value=${play.configuration['site.domain']}" />
 			<div id="share"></div>
@@ -15,3 +22,6 @@
 	</section>
 	<br />
 #{/list}
+
+
+								

@@ -174,5 +174,13 @@ public class ApplicationConfiguration {
 	public String getSiteTwitterShort() {
 		return getProperty("site.twitter.short");
 	}
+
+	public String getSiteHeaderTitle() {
+		return getProperty("site.header.title");
+	}
+
+	public String getSiteSlogan() {
+		return getProperty("site.slogan");
+	}
 	
 }

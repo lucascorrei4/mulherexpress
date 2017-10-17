@@ -21,7 +21,7 @@ public class Application extends Controller {
 		List<Article> bottomNews = getArticlesBottomNews(listArticles, sidebarRightNews);
 		/* Article Ads */
 		Article articleTopAds = getArticleAdsTop(listArticles);
-		Article articleSidebarRightAds = getArticleAdsSidebarRight(listArticles);
+		List<Article> articleSidebarRightAds = getArticleAdsSidebarRight(listArticles);
 		List<Article> articleBottomAds = getArticlesAdsBottom(listArticles);
 		Parameter parameter = Parameter.all().first();
 		List<TheSystem> listTheSystems = TheSystem.find("highlight = false and isActive = true order by postedAt desc")
@@ -38,7 +38,7 @@ public class Application extends Controller {
 		List<Article> bottomNews = getArticlesBottomNews(listArticles, sidebarRightNews);
 		/* Article Ads */
 		Article articleTopAds = getArticleAdsTop(listArticles);
-		Article articleSidebarRightAds = getArticleAdsSidebarRight(listArticles);
+		List<Article> articleSidebarRightAds = getArticleAdsSidebarRight(listArticles);
 		List<Article> articleBottomAds = getArticlesAdsBottom(listArticles);
 		Parameter parameter = Parameter.all().first();
 		List<TheSystem> listTheSystems = TheSystem.find("highlight = false and isActive = true order by postedAt desc")
@@ -81,6 +81,9 @@ public class Application extends Controller {
 			if (article.getTypeAds() != null && TypeAdsNewsEnum.isAdsBottom(article.getTypeAds().getValue())) {
 				listArticle.add(article);
 			}
+			if (listArticle.size() == 4) {
+				return listArticle;
+			}
 		}
 		return listArticle;
 	}
@@ -94,13 +97,17 @@ public class Application extends Controller {
 		return null;
 	}
 
-	private static Article getArticleAdsSidebarRight(List<Article> listArticles) {
+	private static List<Article> getArticleAdsSidebarRight(List<Article> listArticles) {
+		List<Article> listArticle = new ArrayList<Article>();
 		for (Article article : listArticles) {
 			if (article.getTypeAds() != null && TypeAdsNewsEnum.isAdsSidebarRight(article.getTypeAds().getValue())) {
-				return article;
+				listArticle.add(article);
+			}
+			if (listArticle.size() == 2) {
+				return listArticle;
 			}
 		}
-		return null;
+		return listArticle;
 	}
 
 	public static void getImage(long id, String index) {

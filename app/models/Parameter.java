@@ -44,14 +44,6 @@ public class Parameter extends Model {
 	@Lob
 	public String msgUpgrade;
 
-	public String getMsgUpgrade() {
-		return msgUpgrade;
-	}
-
-	public void setMsgUpgrade(String msgUpgrade) {
-		this.msgUpgrade = msgUpgrade;
-	}
-
 	@Lob
 	public String logoUrl;
 
@@ -66,6 +58,10 @@ public class Parameter extends Model {
 
 	@Lob
 	public String embedFirstStep;
+
+	public String googleAnalyticsId;
+	
+	public String googleRemarketingId;
 
 	public String toString() {
 		return "Mensalidade atual: " + currentPricePlan;
@@ -158,6 +154,30 @@ public class Parameter extends Model {
 
 	public void setEmbedFirstStep(String embedFirstStep) {
 		this.embedFirstStep = embedFirstStep;
+	}
+	
+	public String getMsgUpgrade() {
+		return msgUpgrade;
+	}
+
+	public void setMsgUpgrade(String msgUpgrade) {
+		this.msgUpgrade = msgUpgrade;
+	}
+	
+	public String getGoogleAnalyticsId() {
+		return googleAnalyticsId;
+	}
+
+	public void setGoogleAnalyticsId(String googleAnalyticsId) {
+		this.googleAnalyticsId = googleAnalyticsId;
+	}
+
+	public String getGoogleRemarketingId() {
+		return googleRemarketingId;
+	}
+
+	public void setGoogleRemarketingId(String googleRemarketingId) {
+		this.googleRemarketingId = googleRemarketingId;
 	}
 
 }

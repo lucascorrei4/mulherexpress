@@ -3343,3 +3343,33 @@ input::-moz-focus-inner {
 
 }
 
+h3.mainLead {
+	color: #262626; 
+	font-size: 24px; 
+	font-weight: 600; 
+	font-style: normal; 
+	letter-spacing: normal;
+	line-height: 32px; 
+	text-transform: capitalize;	
+	text-align: left; 
+}
+
+h1.mainLead {
+	color: #000;    
+	font-size: 35px;    
+	text-transform: uppercase;    
+	line-height: 50px;    
+	font-weight: 600;    
+	letter-spacing: 3px; margin: 0;"
+}
+
+h4.mainLead {
+	color: #262626; 
+	font-size: 20px; 
+	font-weight: 600; 
+	font-style: normal; 
+	letter-spacing: normal;
+	line-height: 32px; 
+	text-transform: capitalize;	
+	text-align: left; 
+}
