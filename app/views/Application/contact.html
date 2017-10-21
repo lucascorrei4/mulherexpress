@@ -8,13 +8,13 @@
 		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 		})(window,document,'script','dataLayer','GTM-WWMNHWH');</script>
 		<!-- End Google Tag Manager -->
-		<title>Contato | ${play.configuration['site.name']}</title>
-		<meta name="description" content="Tem alguma dúvida, crítica ou sugestão? Deixe seu contato! | ${play.configuration['site.name']}">
-		<meta name="keywords" content="contato, ${play.configuration['site.name']}">
-		<meta property="twitter:title" content="Contato | ${play.configuration['site.name']}">
-		<meta property="twitter:description" content="Tem alguma dúvida, crítica ou sugestão? Deixe seu contato! | ${play.configuration['site.name']}">
-		<meta property="og:title" content="Contato | ${play.configuration['site.name']}">
-		<meta property="og:description" content="Tem alguma dúvida, crítica ou sugestão? Deixe seu contato! | ${play.configuration['site.name']}">
+		<title>Contato | &{parameter.getSiteName()}</title>
+		<meta name="description" content="Tem alguma dúvida, crítica ou sugestão? Deixe seu contato! | &{parameter.getSiteName()}">
+		<meta name="keywords" content="contato, &{parameter.getSiteName()}">
+		<meta property="twitter:title" content="Contato | &{parameter.getSiteName()}">
+		<meta property="twitter:description" content="Tem alguma dúvida, crítica ou sugestão? Deixe seu contato! | &{parameter.getSiteName()}">
+		<meta property="og:title" content="Contato | &{parameter.getSiteName()}">
+		<meta property="og:description" content="Tem alguma dúvida, crítica ou sugestão? Deixe seu contato! | &{parameter.getSiteName()}">
 		<meta property="og:image" content="ApplicationConfiguration.getInstance().getSiteDomain()/public/images/logo-admin.png">
 		<meta charset="utf-8" />
 		#{include 'includes/headerTemplateFollow.html' /}

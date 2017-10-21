@@ -72,6 +72,7 @@ public class Admin extends Controller {
 
 	public static void index() {
 		User connectedUser = getLoggedUserInstitution().getUser();
+		Parameter parameter = Parameter.all().first();
 		if (connectedUser == null || connectedUser.getInstitutionId() == 0) {
 			Admin.firstStep();
 		} else {
@@ -86,12 +87,11 @@ public class Admin extends Controller {
 				List<Service> listServices = Service.find("institutionId = " + connectedUser.getInstitutionId() + " and isActive = true order by postedAt desc").fetch(5);
 				Institution institution = Institution.find("byId", connectedUser.getInstitutionId()).first();
 				String institutionName = institution.getInstitution();
-				Parameter parameter = Parameter.all().first();
 				int allSents = contSentSMSs + contSentPushs + contSentMails;
 				render(listClients, listServices, contClients, contServices, connectedUser, institutionName, contSentSMSs, institution, contSentPushs, parameter, smsExceedLimit, userFreeTrial, allSents, contSentMails);
 			} else {
 				/* Redirect to page of information about expired license */
-				render("@Admin.expiredLicense", connectedUser);
+				render("@Admin.expiredLicense", connectedUser, parameter);
 			}
 		}
 	}
@@ -133,9 +133,9 @@ public class Admin extends Controller {
 			invoice.setStatusPayment(StatusPaymentEnum.Free);
 		}
 		invoice.setSmsQtd(0l);
-		invoice.setSmsUnitPrice(parameter.getSmsPricePlan());
+		invoice.setSmsUnitPrice(0f);
 		invoice.setSmsValue(0f);
-		invoice.setValue(parameter.getCurrentPricePlan());
+		invoice.setValue(0f);
 		invoice.willBeSaved = true;
 		invoice.merge();
 	}

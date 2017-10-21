@@ -13,7 +13,7 @@ secure.error=Usuário ou senha incorretos.
 secure.logout=Você foi desconectado.
 
 
-crud.title=Mulher Express
+crud.title=
 crud.home=Início
 crud.blank=Novo
 crud.index.title=Administração
@@ -162,6 +162,24 @@ TheSystem= O Sistema
 MailBase=Base de E-mail
 
 #Labels
+typeAds=Tipo Ads
+directLink=Link Direto
+siteName=Nome do Site
+siteDomain=Domínio do Site
+siteMail=E-mail do Site
+siteTitle=Título do Site (SEO)
+siteDescription=Descrição do Site (SEO)
+siteKeywords=Palavras-chave (SEO)
+siteFacebook=URL Facebook
+siteTwitter=URL Twitter
+siteTwitterShort=@twitter
+siteInstagram=URL Instagram
+siteInstagramShort=@instagram
+siteLogo=Caminho Logo
+siteHeader=Título Topo
+siteSlogan=Slogan do Site
+googleRemarketingId=Google Remarketing Id
+googleAnalyticsId=Google Analytics Id
 titleCaptureForm=Título Form. Captura
 url=URL
 sequence=Sequência
@@ -387,7 +405,7 @@ validation.msgGenderSelectMembers=Para enviar a todos os membros por um determin
 info.isActive.true=Habilita o item atual para ser utilizado pelo sistema.
 info.isActive.false=Informa ao sistema que item atual será descartado.
 
-project.name=Mulher Express
-project.link=http://twitter.com/lucascorrei4
+project.name=
+project.link=
 project.version=1.0
 project.year=2017

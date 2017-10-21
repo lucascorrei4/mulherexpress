@@ -8,14 +8,14 @@
 		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 		})(window,document,'script','dataLayer','GTM-WWMNHWH');</script>
 		<!-- End Google Tag Manager -->
-		<title>&{title} | ${play.configuration['site.name']}</title>
+		<title>&{title} | &{parameter.getSiteName()}</title>
 		<meta name="description" content="&{article.getHeadline()}">
 		<meta name="keywords" content="&{article.getMetatags()}">
-		<meta property="twitter:title" content="&{title} | ${play.configuration['site.name']}">
+		<meta property="twitter:title" content="&{title} | &{parameter.getSiteName()}">
 		<meta property="twitter:description" content="&{article.getHeadline()}">
-		<meta property="og:title" content="&{title} | ${play.configuration['site.name']}">
+		<meta property="og:title" content="&{title} | &{parameter.getSiteName()}">
 		<meta property="og:description" content="&{article.getHeadline()}">
-		<meta property="og:image" content="${play.configuration['site.domain']}/newscontroller/getimage?id=&{article.id}&index=1">
+		<meta property="og:image" content="&{parameter.getSiteDomain()}}/application/getimage?id=&{article.id}&index=1">
 		<meta charset="utf-8" />
 		#{include 'includes/headerTemplateFollow.html' /}
 	</head>
@@ -33,7 +33,7 @@
 					<header class="special container" style="margin-bottom: 0">
 						<span class="icon fa-heartbeat"></span>
 						<h1 class="mainLead">&{article.getTitle().raw()}</h1>
-						<p style="font-size: 15px; margin: 0;">Você está em: <a href="/"><strong>Mulher Express</strong></a> > <a href="/artigos"> <a href="#"><strong>&{article.getTitle().raw()}</strong></a></p>
+						<p style="font-size: 15px; margin: 0;">Você está em: <a href="/"><strong>&{parameter.getSiteTitle()}</strong></a> > <a href="/artigos"> <a href="#"><strong>&{article.getTitle().raw()}</strong></a></p>
 						<p style="font-size: 15px; margin: 0;">Publicado em &{article.postedAtParsed}</p>
 					</header>
 					<section class="wrapper style4 container">
@@ -53,20 +53,25 @@
 										#{if article.getEmbed()}
 											<iframe width="560" height="315" src="&{article.getEmbed()}?rel=0&autoplay=1" frameborder="0" allowfullscreen style="width: 100%;"></iframe>
 											<p style="color: #444444">&{article.getDescription().raw()}</p>
-											<a href="#" class="image featured"><img src="@{NewsController.getImage(article.id, '2')}" alt="&{article.getTitle()}" title="&{article.getTitle()}"></a>
+											<a href="#" class="image featured"><img src="@{Application.getImage(article.id, '2')}" alt="&{article.getTitle()}" title="&{article.getTitle()}"></a>
 										#{/if}
 										#{else}
-											<a href="#" class="image featured"><img src="@{NewsController.getImage(article.id, '2')}" alt="&{article.getTitle()}" title="&{article.getTitle()}"></a>
+											<a href="#" class="image featured"><img src="@{Application.getImage(article.id, '2')}" alt="&{article.getTitle()}" title="&{article.getTitle()}"></a>
 											<p style="color: #444444">&{article.getDescription().raw()}</p>
 										#{/else}
 										
 										#{if article.getComplement()}
-											<a href="#" class="image featured"><img src="@{NewsController.getImage(article.id, '3')}" alt="&{article.getTitle()}" title="&{article.getTitle()}"></a>
+											<a href="#" class="image featured"><img src="@{Application.getImage(article.id, '3')}" alt="&{article.getTitle()}" title="&{article.getTitle()}"></a>
 											<p style="color: #444444">&{article.getComplement().raw()}</p>
 										#{/if}
 									</section>
 									<div id="share"></div>
 									<div class="fb-comments" data-href="" data-numposts="5"></div>
+									<!-- Tweet Embed Content  -->
+									<section style="padding-top: 10px;">
+										&{parameter.getTweet().raw()}
+										<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+									</section>
 								</div>
 							</div>
 							<div class="4u 12u(narrower)">

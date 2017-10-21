@@ -7,7 +7,7 @@
 	<div class="container">
 		<div class="footer-main">
 			<p>
-				&copy 2017 ${play.configuration['site.name']} | ${play.configuration.getProperty('site.mail')}</a>
+				&copy 2017 &{parameter.getSiteName()} | ${play.configuration.getProperty('site.mail')}</a>
 			</p>
 			<ul>
 				<li><a href="${play.configuration.getProperty('site.facebook')}" target="_blank"><span class="fb"> </span></a></li>

@@ -3356,7 +3356,7 @@ h3.mainLead {
 
 h1.mainLead {
 	color: #000;    
-	font-size: 35px;    
+	font-size: 1.8em;    
 	text-transform: uppercase;    
 	line-height: 50px;    
 	font-weight: 600;    
@@ -3372,4 +3372,9 @@ h4.mainLead {
 	line-height: 32px; 
 	text-transform: capitalize;	
 	text-align: left; 
+}
+
+@font-face {
+    font-family: demo_coneria;
+    src: url('/public/font/demo_coneria.ttf') format('truetype');
 }

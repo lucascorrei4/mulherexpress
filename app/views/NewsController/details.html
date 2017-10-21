@@ -8,12 +8,12 @@
 		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 		})(window,document,'script','dataLayer','GTM-WWMNHWH');</script>
 		<!-- End Google Tag Manager -->
-		<title>&{title} #TMFTQS | ${play.configuration['site.name']}</title>
+		<title>&{title} #TMFTQS | &{parameter.getSiteName()}</title>
 		<meta name="description" content="&{article.getHeadline()}">
 		<meta name="keywords" content="&{article.getMetatags()}">
-		<meta property="twitter:title" content="&{title} | ${play.configuration['site.name']}">
+		<meta property="twitter:title" content="&{title} | &{parameter.getSiteName()}">
 		<meta property="twitter:description" content="&{article.getHeadline()}">
-		<meta property="og:title" content="&{title} | ${play.configuration['site.name']}">
+		<meta property="og:title" content="&{title} | &{parameter.getSiteName()}">
 		<meta property="og:description" content="&{article.getHeadline()}">
 		<meta property="og:image" content="${play.configuration.getProperty('site.domain')}/newscontroller/getimage?id=&{article.id}&index=1">
 		<meta charset="utf-8" />
@@ -45,7 +45,7 @@
 									<div class="content">
 										<section>
 											<header>
-												<p style="font-size: 15px; margin: 0; text-align: left">Você está em: <a href="/"><strong>${play.configuration['site.name']}</strong></a> > <a href="/dicas"><strong>Dicas</strong></a> > <a href="#"><strong>&{article.getTitle().raw()}</strong></a></p>
+												<p style="font-size: 15px; margin: 0; text-align: left">Você está em: <a href="/"><strong>&{parameter.getSiteName()}</strong></a> > <a href="/dicas"><strong>Dicas</strong></a> > <a href="#"><strong>&{article.getTitle().raw()}</strong></a></p>
 												<p style="font-size: 15px; margin: 0; text-align: left">Publicado por <a href="http://instagram.com/lucascorrei4" target="_blank">Lucas Correia</a> em &{article.postedAtParsed}</p>
 												<input id="shorten" type="hidden" value="&{article.getShortenUrl()}" />
 												<h3 style="text-align: left; text-transform: unset; margin-top: 20px; color: #0f0f0f; font-weight: 600">&{article.getHeadline().raw()}</h3>

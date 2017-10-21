@@ -1,20 +1,20 @@
 <meta charset="utf-8" />
 <!-- Footer -->
 <footer id="footer">
-<div class="fb-page" data-href="${play.configuration['site.facebook']}" data-hide-cover="false" data-show-facepile="false" data-show-posts="false" data-width="380">
-	<blockquote cite="${play.configuration['site.facebook']}s" class="fb-xfbml-parse-ignore">
-		<a href="${play.configuration['site.facebook']}">${play.configuration['site.name']}</a>
+<div class="fb-page" data-href="&{parameter.getSiteFacebook()}" data-hide-cover="false" data-show-facepile="false" data-show-posts="false" data-width="380">
+	<blockquote cite="&{parameter.getSiteFacebook()}s" class="fb-xfbml-parse-ignore">
+		<a href="&{parameter.getSiteFacebook()}">#{verbatim}&{parameter.getSiteName()}#{/verbatim}</a>
 	</blockquote>
 </div>
 <br />
 <br />
 	<ul class="copyright">
-		<li>&copy; <a href="/">${play.configuration['site.name']}</a></li><li>${play.configuration['site.mail']}</li>
+		<li>&copy; <a href="/">#{verbatim}&{parameter.getSiteName()}#{/verbatim}</a></li>
 	</ul>
 	
 	<ul class="icons" style="vertical-align: bottom;">
-		<li style="vertical-align: bottom; line-height: 0;"><div class="fb-like" data-href="${play.configuration['site.domain']}" data-layout="button" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div></li>
-		<li style="vertical-align: bottom; line-height: 0;"><a href="${play.configuration['site.twitter']}" class="twitter-follow-button" data-show-count="false">Seguir ${play.configuration['site.twitter.short']}</a></li>
+		<li style="vertical-align: bottom; line-height: 0;"><div class="fb-like" data-href="&{parameter.getSiteDomain()}}" data-layout="button" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div></li>
+		<li style="vertical-align: bottom; line-height: 0;"><a href="&{parameter.getSiteTwitter()}" class="twitter-follow-button" data-show-count="false">Seguir &{parameter.getSiteTwitterShort()}</a></li>
 	</ul>
 	<span id="siteseal"><script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=4eoOKsJ09M4eh5Vaf8qIywX4wcyhgv6aCDMJfNk6JBW8r6D0cyJgnEuPx91h"></script></span>
 	<script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>

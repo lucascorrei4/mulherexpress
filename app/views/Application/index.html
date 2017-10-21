@@ -8,14 +8,14 @@
 		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 		})(window,document,'script','dataLayer','GTM-WWMNHWH');</script>
 		<!-- End Google Tag Manager -->
-		<title>${play.configuration['site.title']}</title>
-		<meta name="description" content="${play.configuration['site.description']} | ${play.configuration['site.title']}">
-		<meta name="keywords" content="${play.configuration['site.keywords']} ">
-		<meta property="twitter:title" content="${play.configuration['site.title']}">
-		<meta property="twitter:description" content="${play.configuration['site.description']} | ${play.configuration['site.title']}">
-		<meta property="og:title" content="${play.configuration['site.title']}">
-		<meta property="og:description" content="${play.configuration['site.description']} | ${play.configuration['site.title']}">
-		<meta property="og:image" content="${play.configuration['site.domain']}${play.configuration['site.logo']}">
+		<title>&{parameter.getSiteTitle()}</title>
+		<meta name="description" content="&{parameter.getSiteDescription()} | &{parameter.getSiteTitle()}">
+		<meta name="keywords" content="&{parameter.getSiteKeywords()}">
+		<meta property="twitter:title" content="&{parameter.getSiteTitle()}">
+		<meta property="twitter:description" content="&{parameter.getSiteDescription()} | &{parameter.getSiteTitle()}">
+		<meta property="og:title" content="&{parameter.getSiteTitle()}">
+		<meta property="og:description" content="&{parameter.getSiteDescription()} | &{parameter.getSiteTitle()}">
+		<meta property="og:image" content="&{parameter.getSiteDomain()}}&{parameter.getSiteLogo()}">
 		<meta charset="utf-8" />
 		#{include 'includes/headerTemplateFollow.html' /}
 	</head>
@@ -30,10 +30,10 @@
 				#{include 'includes/imgAdsTop.html' /}
 				<header class="special container" style="margin-bottom: 0">
 					<span class="icon fa-heartbeat"></span>
-					<div class="logo" style="position: relative; background-image: url('${play.configuration['site.logo']}'); width:150px; height:150px; border-radius:50%; overflow:hidden; background-size: cover; margin: 0 auto;"></div>
-					<h2 style="font-family: 'DejaVu Sans Mono', Menlo, Consolas, 'Liberation Mono', Monaco, 'Lucida Console'">#{verbatim}${play.configuration['site.name']}#{/verbatim}</h2>
-					<blockquote style="border: none; padding: 0;font-style:italic;">
-						#{verbatim}${play.configuration['site.slogan']}#{/verbatim} 
+					<div class="logo" style="position: relative; background-image: url('&{parameter.getSiteLogo()}'); width:150px; height:150px; border-radius:50%; overflow:hidden; background-size: cover; margin: 0 auto;"></div>
+					<h2 style="font-family: demo_coneria; text-transform: capitalize; font-size: 2.4em; color: #A6767E; font-weight: 600;">#{verbatim}&{parameter.getSiteName()}#{/verbatim}</h2>
+					<blockquote style="border: none; padding: 0;font-style:italic; color: darkslategray">
+						#{verbatim}&{parameter.getSiteSlogan()}#{/verbatim} 
 					</blockquote>
 				</header>
 				<section class="wrapper style4 container">

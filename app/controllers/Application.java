@@ -117,23 +117,28 @@ public class Application extends Controller {
 			if (article.getImage1() != null) {
 				renderBinary(article.getImage1().get());
 				return;
-			} else {
-				renderBinary(getVirtualFile());
-			}
+			} 
 		} else if ("2".equals(index)) {
 			if (article.getImage2() != null) {
 				renderBinary(article.getImage2().get());
 				return;
-			} else {
-				renderBinary(getVirtualFile());
-			}
+			} 
 		}
 	}
 
 	public static File getVirtualFile() {
-		VirtualFile vf = VirtualFile.fromRelativePath("/public/images/logo-271x149.png");
+		VirtualFile vf = VirtualFile.fromRelativePath("/public/images/apple120x120.png");
 		File f = vf.getRealFile();
 		return f;
+	}
+	
+	public static void contact() {
+		TheSystem theSystem = new TheSystem();
+		theSystem.setShowTopMenu(true);
+		List<Article> listArticles = Article.find("highlight = false and isActive = true order by postedAt desc").fetch(6);
+		List<Article> bottomNews = listArticles.subList(0, 3);
+		Parameter parameter = Parameter.all().first();
+		render(theSystem, bottomNews, parameter);
 	}
 
 }
