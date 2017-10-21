@@ -28,7 +28,7 @@
 			<!-- Header -->
 				#{include 'includes/menuTemplateFollow.html' /}
 			<!-- Main -->
-				<article id="main">
+				<article id="main" style="background-color: &{parameter.getSiteBackGroundColor() == null ? 'gray' : parameter.getSiteBackGroundColor()}">
 					#{include 'includes/imgAdsTop.html' /}
 					<header class="special container" style="margin-bottom: 0">
 						<span class="icon fa-heartbeat"></span>

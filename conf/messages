@@ -162,6 +162,8 @@ TheSystem= O Sistema
 MailBase=Base de E-mail
 
 #Labels
+siteMainTitleColor=Cor Título Principal
+siteBackGroundColor=Cor de Fundo
 typeAds=Tipo Ads
 directLink=Link Direto
 siteName=Nome do Site

@@ -46,6 +46,9 @@ public class Parameter extends Model {
 	public String siteLogo;
 	public String siteHeader;
 	public String siteSlogan;
+
+	public String siteBackGroundColor;
+	public String siteMainTitleColor;
 	
 	@Lob
 	public String logoUrl;
@@ -203,6 +206,22 @@ public class Parameter extends Model {
 
 	public void setSiteInstagramShort(String siteInstagramShort) {
 		this.siteInstagramShort = siteInstagramShort;
+	}
+
+	public String getSiteBackGroundColor() {
+		return siteBackGroundColor;
+	}
+
+	public void setSiteBackGroundColor(String siteBackGroundColor) {
+		this.siteBackGroundColor = siteBackGroundColor;
+	}
+
+	public String getSiteMainTitleColor() {
+		return siteMainTitleColor;
+	}
+
+	public void setSiteMainTitleColor(String siteMainTitleColor) {
+		this.siteMainTitleColor = siteMainTitleColor;
 	}
 
 }
