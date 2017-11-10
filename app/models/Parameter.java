@@ -62,6 +62,8 @@ public class Parameter extends Model {
 	
 	public String googleRemarketingId;
 
+	public String googleTagManagerId;
+
 	public String toString() {
 		return "Portal: " + siteName;
 	}
@@ -232,6 +234,14 @@ public class Parameter extends Model {
 
 	public void setSiteIconFontAwesome(String siteIconFontAwesome) {
 		this.siteIconFontAwesome = siteIconFontAwesome;
+	}
+	
+	public String getGoogleTagManagerId() {
+		return googleTagManagerId;
+	}
+
+	public void setGoogleTagManagerId(String googleTagManagerId) {
+		this.googleTagManagerId = googleTagManagerId;
 	}
 
 }

@@ -162,6 +162,7 @@ TheSystem= O Sistema
 MailBase=Base de E-mail
 
 #Labels
+googleTagManagerId=Google Tag Manager Id
 siteIconFontAwesome=Ícone Font Awesome
 siteMainTitleColor=Cor Título Principal
 siteBackGroundColor=Cor de Fundo
