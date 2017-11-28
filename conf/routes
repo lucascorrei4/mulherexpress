@@ -11,6 +11,7 @@
 GET     ${ctx}/                                       				Application.index
 GET    	${ctx}/artigos/{id}/{friendlyUrl}							Application.details
 GET    	${ctx}/artigos												Application.index
+GET     ${ctx}/sitemap.xml                              			staticFile:/public/sitemap.xml
 
 # Home page
 POST    ${ctx}/savemessage											MessageCRUD.saveMessage
