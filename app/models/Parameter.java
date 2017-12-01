@@ -53,6 +53,15 @@ public class Parameter extends Model {
 	public String siteIconFontAwesome;
 	
 	@Lob
+	public String descriptionContactPage;
+	@Lob
+	public String descriptionAboutPage;
+	@Lob
+	public String descriptionPrivacyPolicyPage;
+	@Lob
+	public String descriptionTermsConditionsPage;
+	
+	@Lob
 	public String logoUrl;
 
 	@Lob
@@ -62,6 +71,8 @@ public class Parameter extends Model {
 	
 	public String googleRemarketingId;
 
+	public String messageHighlightProducts;
+	
 	public String googleTagManagerId;
 
 	public String toString() {
@@ -227,13 +238,21 @@ public class Parameter extends Model {
 	public void setSiteMainTitleColor(String siteMainTitleColor) {
 		this.siteMainTitleColor = siteMainTitleColor;
 	}
-	
+
 	public String getSiteIconFontAwesome() {
 		return siteIconFontAwesome;
 	}
 
 	public void setSiteIconFontAwesome(String siteIconFontAwesome) {
 		this.siteIconFontAwesome = siteIconFontAwesome;
+	}
+
+	public String getMessageHighlightProducts() {
+		return messageHighlightProducts;
+	}
+
+	public void setMessageHighlightProducts(String messageHighlightProducts) {
+		this.messageHighlightProducts = messageHighlightProducts;
 	}
 	
 	public String getGoogleTagManagerId() {
@@ -242,6 +261,42 @@ public class Parameter extends Model {
 
 	public void setGoogleTagManagerId(String googleTagManagerId) {
 		this.googleTagManagerId = googleTagManagerId;
+	}
+	
+	public static Parameter getCurrentParameter() {
+		return (Parameter) Parameter.findAll().iterator().next();
+	}
+
+	public String getDescriptionContactPage() {
+		return Utils.isNullOrEmpty(this.descriptionContactPage) ? descriptionContactPage : Utils.normalizeString(descriptionContactPage);
+	}
+
+	public void setDescriptionContactPage(String descriptionContactPage) {
+		this.descriptionContactPage = descriptionContactPage;
+	}
+
+	public String getDescriptionAboutPage() {
+		return Utils.isNullOrEmpty(this.descriptionAboutPage) ? descriptionAboutPage : Utils.normalizeString(descriptionAboutPage);
+	}
+
+	public void setDescriptionAboutPage(String descriptionAboutPage) {
+		this.descriptionAboutPage = descriptionAboutPage;
+	}
+
+	public String getDescriptionPrivacyPolicyPage() {
+		return Utils.isNullOrEmpty(this.descriptionPrivacyPolicyPage) ? descriptionPrivacyPolicyPage : Utils.normalizeString(descriptionPrivacyPolicyPage);
+	}
+
+	public void setDescriptionPrivacyPolicyPage(String descriptionPrivacyPolicyPage) {
+		this.descriptionPrivacyPolicyPage = descriptionPrivacyPolicyPage;
+	}
+
+	public String getDescriptionTermsConditionsPage() {
+		return Utils.isNullOrEmpty(this.descriptionTermsConditionsPage) ? descriptionTermsConditionsPage : Utils.normalizeString(descriptionTermsConditionsPage);
+	}
+
+	public void setDescriptionTermsConditionsPage(String descriptionTermsConditionsPage) {
+		this.descriptionTermsConditionsPage = descriptionTermsConditionsPage;
 	}
 
 }

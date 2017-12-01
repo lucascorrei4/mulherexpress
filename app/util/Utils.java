@@ -41,7 +41,6 @@ import controllers.Admin;
 import models.Institution;
 import models.Service;
 import models.User;
-import play.libs.URLs;
 import play.mvc.Controller;
 
 public class Utils extends Controller {
@@ -429,11 +428,13 @@ public class Utils extends Controller {
 		return StringUtils.newStringUtf8(Base64.decodeBase64(s));
 	}
 
-	public static void mainssss(String[] args) throws UnsupportedEncodingException {
-		String val1 = String.valueOf(Utils.encode(decodeUrl("teste654321")));
-		String val2 = Utils.encode("teste654321");
+	public static void main(String[] args) throws UnsupportedEncodingException {
+		String val1 = String.valueOf(Utils.encode(decodeUrl("correiaejaber2017#")));
+		String val2 = Utils.encode("correiaejaber2017#");
+		System.out.println(val2);
 		System.out.println(val1.equals(val2));
 		System.out.println(val1.equalsIgnoreCase(val2));
+		System.out.println(decode(val2));
 	}
 
 	public static String encode(String s) {
@@ -465,7 +466,9 @@ public class Utils extends Controller {
 	}
 
 	public static String normalizeString(String str) {
-		return str.replace("%", "%%");
+		str = str.replaceAll("%%", "%");
+		str = str.replaceAll("&#37;&#37;", "&#37;");
+		return str.replace("%", "&#37;");
 	}
 
 	public static String getFirstDayMonthDate() {
@@ -504,7 +507,7 @@ public class Utils extends Controller {
 		return "";
 	}
 	
-	public static void main(String[] args) {
+	public static void mainn(String[] args) {
 		System.out.println(getNameByWholeName("Lucas Correia Evangelista"));
 		System.out.println(getLastNameByWholeName("Lucas Correia Evangelista"));
 	}

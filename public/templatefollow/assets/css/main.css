@@ -3378,12 +3378,3 @@ h4.mainLead {
     font-family: demo_coneria;
     src: url('/public/font/demo_coneria.ttf') format('truetype');
 }
-
-a.button {
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
-
-    text-decoration: none;
-    color: initial;
-}

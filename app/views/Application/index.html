@@ -27,6 +27,7 @@
 		<meta property="og:description" content="&{parameter.getSiteDescription()} | &{parameter.getSiteTitle()}">
 		<meta property="og:image" content="&{parameter.getSiteDomain()}}&{parameter.getSiteLogo()}">
 		<meta charset="utf-8" />
+		<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 		#{include 'includes/headerTemplateFollow.html' /}
 	</head>
 	<body class="right-sidebar">
@@ -46,6 +47,10 @@
 						#{verbatim}&{parameter.getSiteSlogan()}#{/verbatim} 
 					</blockquote>
 				</header>
+				<h3 style="text-align: center; font-weight: 600; margin: 0 auto;">#{verbatim}&{parameter.getMessageHighlightProducts() == null ? 'Ofertas da semana em estoque' : parameter.getMessageHighlightProducts()}#{/verbatim}</h3>				
+				<section class="wrapper style4 container" style="display: ${listHightlightProduct.size() > 0 ? 'block' : 'none'}">
+					#{include 'includes/highlightProduct.html' /}
+				</section>
 				<section class="wrapper style4 container">
 					<div id="newsletterTips" style="width: 100%">
 						#{include 'includes/formNewsletterTips.html' /}
